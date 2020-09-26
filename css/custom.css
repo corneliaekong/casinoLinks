@@ -13,6 +13,10 @@
     --secondary-font-color:#c59d5f;
     --body-font-color:#515151;
 }
+main{
+    min-height:100%;
+}
+
 a{
     text-decoration:none;
 }
@@ -27,14 +31,16 @@ ul{
 .cust-btn{
     display: inline-block;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-right: -1px;
+    /* letter-spacing: 1px; */
+    /* margin-right: -1px; */
     color:white;
     border-radius: 5px;
     font-weight:bold;
     transition:opacity .5s;
     cursor:pointer;
     padding:10px 15px;
+    font-weight: 600;
+    font-family: var(--body-font);
 }
 .cust-btn:hover{
     opacity: .7;
@@ -66,61 +72,47 @@ ul{
 nav.black{
     background: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgb(37, 36, 36)), color-stop(1, #302f2f));
     box-shadow: 0 2px 7px #010000;
-    color:#000;
+    color:rgb(48, 48, 48);
     transition:all .5s ease;
-    /* box-shadow: 1px 2px 3px .5px red; */
+    box-shadow: 1px 2px 3px .5px rgb(46, 16, 16);
 
 }
-
 .navbar{
-    /* background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #fff), color-stop(1, #dfdfdf)); */
     position:fixed;
-    height:70px;
-    width: 100%;
-    /* box-shadow: 0 2px 7px #010000; */
-    /* background-color: #ffffff !important; */
-    /* padding:1rem; */
-    /* background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%) !important; */
-    /* height:55px; */
+    top:0;
+    height:70px !important;
+    width: 100% !important;
+    z-index:1;
+    color:#fff !important;
+    /* background:#000; */
+    
 }
-.navbar-brand {
-    /* width:40px; */
+
+.mynav{
+    position:fixed;
+    top:0;
+    height:70px !important;
+    width: 100% !important;
+    z-index:1;
+    color:#fff !important;
+    background:#000 !important;
+    
+    
+}
+.navbar-brand h3 {
     color:var(--primary-color);
     font-weight: bold;
-    font-family:cursive;
-    font-size:1.6rem;
-    /* padding: 0 30px; */
+    font-family:var(--body-font);
+    font-size:1.8rem;
     text-transform: uppercase;
-    /* text-shadow: 2px 1px 3px #062f4f; */
+    background:url('/images/dice-5518248_1280.jpg');
+    background-size: contain;
+    color:transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    
 }
-.navbar-nav li{
-    padding:0 10px;
-}
-
-.navbar-nav li a:hover{
-    /* color:white; */
-    color: var(--primary-color);
-    /* font-weight:bold; */
-}
-.navbar-toggler{
-    outline: none !important;
-}
-.fa-bars{
-    color:rgb(228, 46, 46);
-    font-size:30px;
-}
-
-/* header */
-
-.hero{
-    height: 100vh;
-    width:100%;
-    background:url('../images/—Pngtree—casino\ illustration\ with\ roulette\ wheel\,_989890.png')no-repeat center center / cover;
-    /* background-attachment: fixed; */
-    position: relative;
-}
-
- nav a {
+.navbar a {
     display: block;
     color:#fff;
     padding:10px 15px;
@@ -128,31 +120,51 @@ nav.black{
     text-decoration: none;
     font-weight:500;
     font-family: var(--body-font);
+    text-transform: capitalize;
+    transition: all .5s ease-in-out;
 }
- nav a:hover{
-    border-bottom:var(--primary-color) solid 2px;
+.navbar ul li a:hover{
+    color:var(--primary-color);
+    font-weight: bold;
 }
-.hero::after{
+
+.navbar-toggler{
+    outline: none !important;
+}
+
+
+/* header */
+
+.hero{
+    height: 100vh;
+    width:100%;
+    background:url('../images/inner-hero-header.jpg')no-repeat center center / cover;
+    position:relative;
+   
+}
+
+
+ 
+.hero::before{
     content: '';
     position: absolute;
     top:0;
     left:0;
-    bottom: 0;
-    width:100%;
     height:100%;
-    background:black;
-    /* opacity: .7; */
+    width:100%;
+    background:rgb(77, 4, 14);
+    opacity: .6;
     
 }
 .hero .content{
     display: flex;
     flex-direction: column;
     height:100%;
-    /* width: 100%; */
+    width:100%;
     justify-content: center;
     align-items: center;
     text-align: center;
-    /* padding-top: 0 20px; */
+  
 
 }
 .hero *{
@@ -179,7 +191,8 @@ nav.black{
     max-width:600px;
     color: #fff;
     text-transform: capitalize;
-    padding:0 10px;
+    text-indent: 10px;
+    /* padding:0 10px; */
     margin:20px 0 30px;
 
 }
@@ -230,16 +243,18 @@ nav.black{
 
 #services{
     padding:50px;
-    /* background:#aca8a8; */
+    background:#aca8a8;
     text-align: center;
 }
 #services h4{
-    font-weight:300;
+    font-weight:bold;
     text-transform:capitalize;
     font-family: var(--body-font);
     margin-bottom:15px;
+    font-size:18px;
 
 }
+
 #services h4 a{
     text-decoration: none;
     color:#252525
@@ -351,30 +366,85 @@ nav.black{
 .blog-content h4 a:hover{
     color:var(--primary-color)
 }
+/* Pricing */
+#pricing{
+    padding:50px;
+    /* background:linen; */
+}
+.pricing-plan{
+    display: flex;
+    justify-content: center;
+    width:100%;
+}
+.price{
+    width:300px;
+    background:#fff;
+    box-shadow:2px 3px 5px gray;
+    margin:15px;
+    border-radius: 10px;
+    transition:all .5s ease-out;
+    cursor:pointer;
+}
+.price:hover{
+    transform:translateY(-3px);
+    background:#080808c5;
+    color:#fff;
+}
+.top-price{
+    background:var(--primary-color);
+    color:#fff;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    transition:0.3s ease-in-out;
+    text-align: center;
+    padding:10px 15px;
+}
+.top-price h5{
+    text-transform: uppercase;
+    font-weight:bold;
+    background:#fff;
+    background-size: contain;
+    background-clip: text;
+    color:transparent;
+    -webkit-background-clip: text;
+    
+}
+.price-list{
+    padding:5px 15px;
+}
+.price-list ul li{
+    padding:3px 5px;
+}
+.price-list ul li i{
+    color:var(--primary-color);
+    margin-right: 5px;
+    /* border:2px solid green; */
+    /* border-radius:50px; */
+    /* padding:3px; */
+    font-size:13px;
+}
+.amount{
+    padding-bottom: 30px;
+    
+}
+
 /* footer */
 .footer{
     position: relative;
     width:100%;
     height:100%;
-    background:url('../images/inner-hero-header.jpg') no-repeat center center / cover;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgb(37, 36, 36)), color-stop(1, #302f2f));
+   
     padding:50px;
     color:white;
+    bottom:0;
 }
-.footer::before{
-    content: '';
-    position: absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height: 100%;
-    background-color: black;
-    opacity: .9;
-}
+
 .footer h5{
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-family: var(--body-font);
     /* color:var(--primary-color); */
-    font-size:1.1rem;
+    /* font-size:1.1rem; */
     /* font-weight: bold; */
 }
 .footer i{
@@ -384,8 +454,8 @@ nav.black{
 .footer-lists li{
     
     padding: 10px 0;
-    border-bottom: 1px solid whitesmoke;
-    border-top: 1px solid red;
+    border-bottom: 1px solid rgb(240, 215, 215);
+    border-top: 1px solid rgb(236, 234, 234);
     width:80%;
     
 }
@@ -400,9 +470,22 @@ nav.black{
     color:white;
     text-decoration: none;
     font-size: 1.1rem;
+    transition: all .4s ease-in-out;
 }
 .footer-lists li a:hover{
-    color:wheat;
+    color:var(--primary-color);
+
+}
+.footer .social{
+    display: flex;
+    /* justify-content: center; */
+}
+.footer .social i{
+    font-size:20px;
+    background:var(--primary-color);
+    border-radius:10px;
+    padding:10px;
+    margin:10px;
 
 }
 .top-link{
@@ -413,7 +496,7 @@ nav.black{
     height:2rem;
     /* display: grid; */
     animation:bounce 2s ease-in-out infinite;
-    background:red;
+    background:var(--primary-color);
     padding:10px;
     border-radius: 50px;
     opacity:0;
@@ -427,25 +510,8 @@ nav.black{
 
 /* link building page */
 
-.hero-inner{
-    position: relative;
-    height: 50vh;
-    width: 100%;
-    background: url('../images/inner-hero-header.jpg') no-repeat center center /cover;
-}
-.hero-inner:before{
-    content: '';
-    position: absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height: 100%;
-    background:#000;
-    opacity:.7;
-}
-.hero-inner *{
-    z-index:200;
-}
+
+
 .inner-content{
     position: absolute;
     display: flex;

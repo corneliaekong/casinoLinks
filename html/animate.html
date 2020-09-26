@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            font-weight:bold;
+            font-size:6rem;
+            text-transform: uppercase;
+            color:gainsboro;
+            /* transition:all .5s ease-in-out; */
+            /* animation: animated 5s forwards; */
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+            animation-name: bounce;
+            animation-timing-function: ease-in-out;
+            animation-delay: .3s;
+            /* animation-iteration-count: infinite; */
+            animation-direction:alternate;
+            animation-fill-mode: forwards;
+            /* animation-play-state: running; */
+            background:url('../images/casino-4787864_1920.jpg');
+            background-size:cover;
+            color:transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            
+        }
+        p{
+            font-size:5rem;
+            font-weight:bold;
+            text-align:center;
+            background-image: linear-gradient(to right, red, rgb(0, 255, 55), blue, black);
+            background-size: cover;
+            background-clip: text;
+            color:transparent;
+            -webkit-background-clip: text;
+        }
+
+        @keyframes bounce{
+            0%{
+                color:blue;
+                /* transform:translateX(-100px); */
+            }
+            50%{
+                color:green;
+                transform: translateX(160px);
+                transform:scaleX(1.5);
+
+            }
+            100%{
+                color:transparent;
+                transform:scaleX(2);
+
+                /* transform:translateY(200px); */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Logo</h1>
+    </div>
+    <p>Background-gradient from text clip</p>
+    
+</body>
+</html>
